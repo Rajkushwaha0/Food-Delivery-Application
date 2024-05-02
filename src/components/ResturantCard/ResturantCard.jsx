@@ -1,3 +1,5 @@
+import { Cloud_ImageLink } from "../../utils/constant";
+
 const ResturantCard = (props) => {
   const { resData } = props;
   // console.log(resData);
@@ -6,10 +8,7 @@ const ResturantCard = (props) => {
       <img
         className="res-logo"
         alt="res-image-not-found"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          resData.cloudinaryImageId
-        }
+        src={Cloud_ImageLink + resData.cloudinaryImageId}
       />
       <h3 className="res-card-name">{resData.name}</h3>
       <h4 className="res-card-cuisine">
@@ -23,7 +22,7 @@ const ResturantCard = (props) => {
           : `${resData.avgRating}⭐`}
       </h5>
       <h5 className="res-card-rate">
-        arriving time:{resData.sla.deliveryTime}
+        arriving time:{resData.sla.deliveryTime}mins
       </h5>
     </div>
   );
